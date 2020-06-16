@@ -1,0 +1,22 @@
+.weather-from-input {
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.weather-info
+{
+  display: flex;
+}
+.weather-info .icon
+{
+  width: 100px;
+  height: 100px;
+}
+.weather-info .info
+{
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

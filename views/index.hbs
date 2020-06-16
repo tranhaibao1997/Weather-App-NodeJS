@@ -1,0 +1,29 @@
+<nav class="navbar navbar-light bg-light">
+    <form action="/" method="GET">
+        <input name="city" placeholder="Enter a city name" required>
+        <input type="submit" value="Get Forecast">
+    </form>
+</nav>
+
+
+{{#if myWeather}}
+<div class="weather-from-input">
+    <h2>Weather at {{myWeather.location}}</h2>
+    <div class="weather-info">
+        <div class="icon">
+            <img>
+        </div>
+        <div class="info">
+            <p>Summary: {{myWeather.summary}}</p>
+            <p>Temperature: {{myWeather.temperature}}</p>
+             <p>UV Index: {{myWeather.uvIndex}}</p>
+        </div>
+
+    </div>
+    <h3>{{myWeather.hourly.summary}}</h3>
+    <ul>
+        
+    </ul>
+
+</div>
+{{/if}}
