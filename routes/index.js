@@ -7,7 +7,7 @@ var getcurrentLocationForcast = require('./../utils/currentLocationForecast')
 
 
 router.get("/", (req, res,next) => {
- res.render("currentWEather")
+ res.render("currentWeather")
 });
 
 
