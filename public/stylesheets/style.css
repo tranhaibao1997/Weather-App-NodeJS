@@ -1,22 +1,42 @@
 .weather-from-input {
-  height: 50vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
-.weather-info
-{
-  display: flex;
+
+.weather-info {
+    display: flex;
 }
-.weather-info .icon
-{
-  width: 100px;
-  height: 100px;
+
+.weather-info .icon {
+    width: 100px;
+    height: 100px;
 }
-.weather-info .info
-{
-  display: flex;
+
+.weather-info .info {
+    display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+img {
+    max-width: 100%;
+}
+
+.hourly-data {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+.hourly-data li {
+    margin: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    flex-direction: column;
 }

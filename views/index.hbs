@@ -1,7 +1,7 @@
 <nav class="navbar navbar-light bg-light">
     <form action="/" method="GET">
         <input name="city" placeholder="Enter a city name" required>
-        <input type="submit" value="Get Forecast">
+        <input id="button" type="submit" value="Get Forecast" >
     </form>
 </nav>
 
@@ -11,19 +11,52 @@
     <h2>Weather at {{myWeather.location}}</h2>
     <div class="weather-info">
         <div class="icon">
-            <img>
+            <img src="https://darksky.net/images/weather-icons/{{myWeather.hourly.icon}}.png" alt="icon">
         </div>
         <div class="info">
             <p>Summary: {{myWeather.summary}}</p>
             <p>Temperature: {{myWeather.temperature}}</p>
-             <p>UV Index: {{myWeather.uvIndex}}</p>
+            <p>UV Index: {{myWeather.uvIndex}}</p>
         </div>
 
     </div>
     <h3>{{myWeather.hourly.summary}}</h3>
-    <ul>
-        
+    <ul class="hourly-data">
+        {{#each myWeather.data}}
+        <li>
+            <img src="https://lh3.googleusercontent.com/proxy/UAx9-lUM-tbql358Z5HEEqNCPAp8HnJmmjrugNJEhXemNdxNh9hnyjIjmS0OSW5AEV7ZoB5kXz_BRjI-DwXOQZp6kmUz_1UCtq1VKyL0lh8C" width="50px" height="50px">
+            <span style="font-weight: bolder;">{{time}}</span>
+            <span >{{temperature}}°C</span>
+            <span>{{summary}}</span></li>
+        {{/each}}
     </ul>
 
 </div>
+
 {{/if}}
+
+<div class="weather-from-input" id="current-weather">
+    <h2>Weather at {{myWeather.location}}</h2>
+    <div class="weather-info">
+        <div class="icon">
+            <img src="https://darksky.net/images/weather-icons/{{myWeather.hourly.icon}}.png" alt="icon">
+        </div>
+        <div class="info">
+            <p>Summary: {{myWeather.summary}}</p>
+            <p>Temperature: {{myWeather.temperature}}</p>
+            <p>UV Index: {{myWeather.uvIndex}}</p>
+        </div>
+
+    </div>
+    <h3>{{myWeather.hourly.summary}}</h3>
+    <ul class="hourly-data">
+        {{#each myWeather.data}}
+        <li>
+            <img src="https://lh3.googleusercontent.com/proxy/UAx9-lUM-tbql358Z5HEEqNCPAp8HnJmmjrugNJEhXemNdxNh9hnyjIjmS0OSW5AEV7ZoB5kXz_BRjI-DwXOQZp6kmUz_1UCtq1VKyL0lh8C" width="50px" height="50px">
+            <span style="font-weight: bolder;">{{time}}</span>
+            <span >{{temperature}}°C</span>
+            <span>{{summary}}</span></li>
+        {{/each}}
+    </ul>
+
+</div>
