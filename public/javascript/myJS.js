@@ -11,51 +11,51 @@ getWeather = async (longtitude, latitude) => {
             },
             body: JSON.stringify(body)
         });
-        // let data = await response.json()
-        // data.hourly.data.map(data => {
-        //     let date = new Date(data.time * 1000);
-        //     // Hours part from the timestamp
-        //     let hours = date.getHours();
-        //     // Minutes part from the timestamp
-        //     let minutes = "0" + date.getMinutes();
-        //     // Seconds part from the timestamp
-        //     let seconds = "0" + date.getSeconds();
+        let data = await response.json()
+        data.hourly.data.map(data => {
+            let date = new Date(data.time * 1000);
+            // Hours part from the timestamp
+            let hours = date.getHours();
+            // Minutes part from the timestamp
+            let minutes = "0" + date.getMinutes();
+            // Seconds part from the timestamp
+            let seconds = "0" + date.getSeconds();
 
-        //     // Will display time in 10:30:23 format
-        //     let formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+            // Will display time in 10:30:23 format
+            let formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
 
-        //     data.time = formattedTime
+            data.time = formattedTime
 
-        //     return data
+            return data
 
-        // })
-        // let myWeather = {
-        //     location: data.timezone,
-        //     temperature: data.currently.temperature,
-        //     summary: data.currently.summary,
-        //     uvIndex: data.currently.uvIndex,
-        //     hourly: data.hourly,
-        //     data: data.hourly.data
+        })
+        let myWeather = {
+            location: data.timezone,
+            temperature: data.currently.temperature,
+            summary: data.currently.summary,
+            uvIndex: data.currently.uvIndex,
+            hourly: data.hourly,
+            data: data.hourly.data
 
 
-        // }
+        }
 
-        // document.getElementById("current-weather").innerHTML = `
-        // <h2>Weather at ${myWeather.location}</h2>
-        // <div class="weather-info">
-        //     <div class="icon">
-        //         <img src="https://darksky.net/images/weather-icons/${myWeather.hourly.icon}.png" alt="icon">
-        //     </div>
-        //     <div class="info">
-        //         <p>Summary: ${myWeather.summary}</p>
-        //         <p>Temperature: ${myWeather.temperature}</p>
-        //         <p>UV Index: ${myWeather.uvIndex}</p>
-        //     </div>
+        document.getElementById("current-weather").innerHTML = `
+        <h2>Weather at ${myWeather.location}</h2>
+        <div class="weather-info">
+            <div class="icon">
+                <img src="https://darksky.net/images/weather-icons/${myWeather.hourly.icon}.png" alt="icon">
+            </div>
+            <div class="info">
+                <p>Summary: ${myWeather.summary}</p>
+                <p>Temperature: ${myWeather.temperature}</p>
+                <p>UV Index: ${myWeather.uvIndex}</p>
+            </div>
 
-        // </div>
-        // <h3>${myWeather.hourly.summary}</h3>
+        </div>
+        <h3>${myWeather.hourly.summary}</h3>
 
-        // `
+        `
 
 
 

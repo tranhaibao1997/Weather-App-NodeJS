@@ -29,21 +29,9 @@ module.exports = async function getcurrentLocationForcast(res, { longtitude, lat
 
 
         console.log(data,"helloooooooo")
-        res.render("index", {
-            myWeather: {
-                location: data.timezone,
-                temperature: data.currently.temperature,
-                summary: data.currently.summary,
-                uvIndex: data.currently.uvIndex,
-                hourly: data.hourly,
-                data: data.hourly.data
-
-
-            }
-
-        })
+     
         
-    //   res.json(data)
+      res.json(data)
 
     } catch (err) {
         console.log(err)

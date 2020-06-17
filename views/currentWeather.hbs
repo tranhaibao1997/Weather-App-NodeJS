@@ -4,10 +4,7 @@
         <input id="button" type="submit" value="Get Forecast" >
     </form>
 </nav>
-
-
-{{#if myWeather}}
-<div class="weather-from-input">
+<div class="weather-from-input" id="current-weather">
     <h2>Weather at {{myWeather.location}}</h2>
     <div class="weather-info">
         <div class="icon">
@@ -32,12 +29,3 @@
     </ul>
 
 </div>
-
-{{/if}}
-
-
-
-
-
-
-
