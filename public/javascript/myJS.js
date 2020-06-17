@@ -1,57 +1,62 @@
-getWeather = async(longtitude, latitude) => {
-    let token = "1a6bdf269c71dae79383eb6d0111865c"
+getWeather = async (longtitude, latitude) => {
 
-    const url = `https://api.darksky.net/forecast/${token}/${latitude},${longtitude}?units=si`;
+    let body = { longtitude, latitude }
     try {
-        let response = await fetch(url)
-        let data = await response.json()
-        data.hourly.data.map(data => {
-            let date = new Date(data.time * 1000);
-            // Hours part from the timestamp
-            let hours = date.getHours();
-            // Minutes part from the timestamp
-            let minutes = "0" + date.getMinutes();
-            // Seconds part from the timestamp
-            let seconds = "0" + date.getSeconds();
 
-            // Will display time in 10:30:23 format
-            let formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+        const response = await fetch("/", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
 
-            data.time = formattedTime
+            },
+            body: JSON.stringify(body)
+        });
+        // let data = await response.json()
+        // data.hourly.data.map(data => {
+        //     let date = new Date(data.time * 1000);
+        //     // Hours part from the timestamp
+        //     let hours = date.getHours();
+        //     // Minutes part from the timestamp
+        //     let minutes = "0" + date.getMinutes();
+        //     // Seconds part from the timestamp
+        //     let seconds = "0" + date.getSeconds();
 
-            return data
+        //     // Will display time in 10:30:23 format
+        //     let formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
 
-        })
-        myWeather = {
-            location: data.timezone,
-            temperature: data.currently.temperature,
-            summary: data.currently.summary,
-            uvIndex: data.currently.uvIndex,
-            hourly: data.hourly,
-            data: data.hourly.data
+        //     data.time = formattedTime
+
+        //     return data
+
+        // })
+        // let myWeather = {
+        //     location: data.timezone,
+        //     temperature: data.currently.temperature,
+        //     summary: data.currently.summary,
+        //     uvIndex: data.currently.uvIndex,
+        //     hourly: data.hourly,
+        //     data: data.hourly.data
 
 
-        }
+        // }
 
-        document.getElementById("current-weather").innerHTML = `
-<h2>Weather at ${myWeather.location}</h2>
-<div class="weather-info">
-    <div class="icon">
-        <img src="https://darksky.net/images/weather-icons/${myWeather.hourly.icon}.png" alt="icon">
-    </div>
-    <div class="info">
-        <p>Summary: ${myWeather.summary}</p>
-        <p>Temperature: ${myWeather.temperature}</p>
-        <p>UV Index: ${myWeather.uvIndex}</p>
-    </div>
+        // document.getElementById("current-weather").innerHTML = `
+        // <h2>Weather at ${myWeather.location}</h2>
+        // <div class="weather-info">
+        //     <div class="icon">
+        //         <img src="https://darksky.net/images/weather-icons/${myWeather.hourly.icon}.png" alt="icon">
+        //     </div>
+        //     <div class="info">
+        //         <p>Summary: ${myWeather.summary}</p>
+        //         <p>Temperature: ${myWeather.temperature}</p>
+        //         <p>UV Index: ${myWeather.uvIndex}</p>
+        //     </div>
 
-</div>
-<h3>${myWeather.hourly.summary}</h3>
+        // </div>
+        // <h3>${myWeather.hourly.summary}</h3>
 
-`
-        document.getElementById("button").addEventListener("click", () => {
-            console.log("aihfiusdfhdiusfhiudsfhewiufgewyfgewfg")
-        })
+        // `
+
 
 
     } catch (err) {

@@ -1,5 +1,5 @@
 <nav class="navbar navbar-light bg-light">
-    <form action="/" method="GET">
+    <form action="/weather" method="GET">
         <input name="city" placeholder="Enter a city name" required>
         <input id="button" type="submit" value="Get Forecast" >
     </form>
@@ -24,7 +24,7 @@
     <ul class="hourly-data">
         {{#each myWeather.data}}
         <li>
-            <img src="https://lh3.googleusercontent.com/proxy/UAx9-lUM-tbql358Z5HEEqNCPAp8HnJmmjrugNJEhXemNdxNh9hnyjIjmS0OSW5AEV7ZoB5kXz_BRjI-DwXOQZp6kmUz_1UCtq1VKyL0lh8C" width="50px" height="50px">
+            <img src="https://i.pinimg.com/originals/d0/73/35/d07335a92f67a04adc75b402004ad1d7.gif" width="50px" height="50px">
             <span style="font-weight: bolder;">{{time}}</span>
             <span >{{temperature}}°C</span>
             <span>{{summary}}</span></li>
@@ -52,7 +52,7 @@
     <ul class="hourly-data">
         {{#each myWeather.data}}
         <li>
-            <img src="https://lh3.googleusercontent.com/proxy/UAx9-lUM-tbql358Z5HEEqNCPAp8HnJmmjrugNJEhXemNdxNh9hnyjIjmS0OSW5AEV7ZoB5kXz_BRjI-DwXOQZp6kmUz_1UCtq1VKyL0lh8C" width="50px" height="50px">
+            <img src="https://i.pinimg.com/originals/d0/73/35/d07335a92f67a04adc75b402004ad1d7.gif" width="50px" height="50px">
             <span style="font-weight: bolder;">{{time}}</span>
             <span >{{temperature}}°C</span>
             <span>{{summary}}</span></li>
@@ -60,3 +60,8 @@
     </ul>
 
 </div>
+
+
+
+
+
