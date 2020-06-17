@@ -30,7 +30,7 @@ getWeather = async (longtitude, latitude) => {
 
         })
         let myWeather = {
-            location: data.timezone,
+            location: "Current Location",
             temperature: data.currently.temperature,
             summary: data.currently.summary,
             uvIndex: data.currently.uvIndex,
